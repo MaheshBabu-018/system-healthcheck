@@ -1,48 +1,41 @@
 #!/bin/bash
-# Health Check Script
 
-# Log file
-LOGFILE="healthlog.txt"
 
-# Add timestamp header
-echo "============================" >> $LOGFILE
-echo "   System Health Report" >> $LOGFILE
-echo "   Generated on: $(date)" >> $LOGFILE
-echo "============================" >> $LOGFILE
+set -x
 
-# System Date and Time
-echo -e "\n Date and Time:" >> $LOGFILE
-date >> $LOGFILE
+LOG_FILE="healthlog.txt"
 
-# Uptime
-echo -e "\n Uptime:" >> $LOGFILE
-uptime -p >> $LOGFILE
+{
+    echo "print the system date and time"
+    date
 
-# CPU Load
-echo -e "\n CPU Load (from uptime):" >> $LOGFILE
-uptime | awk -F'load average:' '{ print $2 }' >> $LOGFILE
+    echo "print the uptime"
+    uptime -p
 
-# Memory Usage
-echo -e "\n Memory Usage (MB):" >> $LOGFILE
-free -m >> $LOGFILE
+    echo "print the CPU load"
+    uptime | awk -F'load average:' '{ print $2 }'
 
-# Disk Usage
-echo -e "\n Disk Usage:" >> $LOGFILE
-df -h --total | grep -E "Filesystem|total" >> $LOGFILE
+    echo "print the memory usage"
+    free -m
+    echo "print the disk usage"
+    df -h
 
-# Top 5 Memory-Consuming Processes
-echo -e "\n Top 5 Memory-Consuming Processes:" >> $LOGFILE
-ps aux --sort=-%mem | head -n 6 >> $LOGFILE
+    echo "print top 5 memory consuming processes"
+    ps aux --sort=-%mem | head -n 6
 
-# Check Services (nginx, ssh)
-echo -e "\n Service Status:" >> $LOGFILE
-for service in nginx ssh
-do
-  if systemctl is-active --quiet $service; then
-    echo "$service :  Running" >> $LOGFILE
-  else
-    echo "$service :  Not Running" >> $LOGFILE
-  fi
-done
+    echo "check nginx status"
+    if systemctl is-active --quiet nginx
+    then
+        echo "nginx is working"
+    else
+        echo "nginx is not working"
+    fi
 
-echo -e "\n✅ Health check completed.\n\n" >> $LOGFILE
+    echo "check ssh status"
+if systemctl is-active --quiet ssh
+    then
+        echo "ssh is working"
+    else
+        echo "ssh is not working"
+    fi
+} >> "$LOG_FILE"

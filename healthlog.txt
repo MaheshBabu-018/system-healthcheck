@@ -36,3 +36,110 @@ ssh : ✅ Running
 ✅ Health check completed.
 
 
+============================
+   System Health Report
+   Generated on: Wed Sep 10 10:03:44 UTC 2025
+============================
+
+ Date and Time:
+Wed Sep 10 10:03:44 UTC 2025
+
+ Uptime:
+up 1 day, 3 hours, 14 minutes
+
+ CPU Load (from uptime):
+ 0.00, 0.00, 0.00
+
+ Memory Usage (MB):
+               total        used        free      shared  buff/cache   available
+Mem:             914         358         251           2         481         556
+Swap:              0           0           0
+
+ Disk Usage:
+Filesystem       Size  Used Avail Use% Mounted on
+total            8.4G  2.5G  5.9G  30% -
+
+ Top 5 Memory-Consuming Processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root        2217  0.0  4.1 1923496 38768 ?       Ssl  Sep09   0:04 /usr/lib/snapd/snapd
+root         190  0.0  2.8 288952 27060 ?        SLsl Sep09   0:08 /sbin/multipathd -d -s
+root         758  0.0  2.4 110020 22988 ?        Ssl  Sep09   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         613  0.0  2.1  32424 20568 ?        Ss   Sep09   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         994  0.0  2.1 1830624 20192 ?       Ssl  Sep09   0:03 /snap/amazon-ssm-agent/11797/amazon-ssm-agent
+
+ Service Status:
+nginx :  Not Running
+ssh :  Running
+
+✅ Health check completed.
+
+
+============================
+   System Health Report
+   Generated on: Wed Sep 10 10:47:20 UTC 2025
+============================
+
+ Date and Time:
+Wed Sep 10 10:47:20 UTC 2025
+
+ Uptime:
+up 1 day, 3 hours, 58 minutes
+
+ CPU Load (from uptime):
+ 0.00, 0.00, 0.00
+
+ Memory Usage (MB):
+               total        used        free      shared  buff/cache   available
+Mem:             914         365         243           2         481         548
+Swap:              0           0           0
+
+ Disk Usage:
+Filesystem       Size  Used Avail Use% Mounted on
+total            8.4G  2.5G  5.9G  30% -
+
+ Top 5 Memory-Consuming Processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root       10741  0.1  4.3 477076 40564 ?        Ssl  10:44   0:00 /usr/libexec/fwupd/fwupd
+root        2217  0.0  4.1 1923496 38768 ?       Ssl  Sep09   0:04 /usr/lib/snapd/snapd
+root         190  0.0  2.8 288952 27060 ?        SLsl Sep09   0:08 /sbin/multipathd -d -s
+root         758  0.0  2.4 110020 22988 ?        Ssl  Sep09   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         613  0.0  2.1  32424 20568 ?        Ss   Sep09   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+
+ Service Status:
+nginx :  Not Running
+ssh :  Running
+
+✅ Health check completed.
+
+
+print the system date and time
+Wed Sep 10 11:36:26 UTC 2025
+print the uptime
+up 1 day, 4 hours, 47 minutes
+print the CPU load
+ 0.01, 0.01, 0.00
+print the memory usage
+               total        used        free      shared  buff/cache   available
+Mem:             914         362         246           2         482         551
+Swap:              0           0           0
+print the disk usage
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/root        6.8G  2.4G  4.4G  35% /
+tmpfs            458M     0  458M   0% /dev/shm
+tmpfs            183M  896K  182M   1% /run
+tmpfs            5.0M     0  5.0M   0% /run/lock
+efivarfs         128K  3.6K  120K   3% /sys/firmware/efi/efivars
+/dev/nvme0n1p16  881M  151M  669M  19% /boot
+/dev/nvme0n1p15  105M  6.2M   99M   6% /boot/efi
+tmpfs             92M   12K   92M   1% /run/user/1000
+print top 5 memory consuming processes
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root        2217  0.0  4.1 1923496 38768 ?       Ssl  Sep09   0:04 /usr/lib/snapd/snapd
+root         190  0.0  2.8 288952 27060 ?        SLsl Sep09   0:09 /sbin/multipathd -d -s
+root         758  0.0  2.4 110020 22988 ?        Ssl  Sep09   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         613  0.0  2.1  32424 20568 ?        Ss   Sep09   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         994  0.0  2.1 1830624 20184 ?       Ssl  Sep09   0:04 /snap/amazon-ssm-agent/11797/amazon-ssm-agent
+check nginx status
+nginx is not working
+check ssh status
+ssh is working
